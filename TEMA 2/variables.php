@@ -1,6 +1,6 @@
 <?php
     $x = 3;
-    $y = 4 + $x;
+    $y = 2 + $x;
 
     echo $y;
     echo "<br>";
@@ -9,21 +9,11 @@
     echo PI;
     echo "<br>";
 
-    $cadena = "HOLA, el simbolo de arroba es \"@\"";
-    $cadena = 'HOLA, el simbolo de arroba es "@"';
-    $boolean = false;
-    $vacio = null;
-
-    echo $boolean;
-    echo "<br>";
-    echo $vacio;
-    echo "<br>";
+    $cadena = "HOLA, el símbolo de arroba es \"@\"";
+    $cadena = 'HOLA, el símbolo de arroba es "@"';
     echo $cadena;
-    echo "<br>";
-
-    echo "Hola $cadena";
-    echo "<br>";
-    echo 'Hola $cadena';
+    echo '<br>';
+    echo "hola $cadena";
     echo "<br>";
 
 ?>

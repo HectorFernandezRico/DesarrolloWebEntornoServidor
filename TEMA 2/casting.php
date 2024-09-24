@@ -1,11 +1,20 @@
 <?php
+/*
+    $a = 3.2;
 
-$a = 3;
+    echo $a/2;
 
-echo (int) $a/2;
-echo "<br>";
+    echo "<br>";
 
-$n1 = "hhhh";
+    $n1 = "34hhhh";
 
-echo $n1 + 3;
-echo "<br>";
+    echo $n1 + 3;
+    echo "<br>";
+*/
+
+    $numero = rand(1,10);
+    echo "<br>"; echo "<br>";
+    echo $numero;
+    echo "<br>";
+    
+?>

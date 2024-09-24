@@ -6,6 +6,26 @@
     <title>Ejercicio01: Arte y Passwords</title>
 </head>
 <body>
-    <h1>Héctor Fernández</h1>
+    <h1><b>Héctor Fernández</b></h1>
+    <?php
+        echo"El hash tipo " . '"sha256"' . " de " . '"Héctor Fernández"' . " es ";    
+        echo hash("sha256","Héctor Fernández");
+    ?>
+
+    <h3><b>Arte ASCII:</b></h3>    
+
+    <pre>
+    H           H
+    H           H
+    H           H
+    H           H
+    H           H
+    H H H H H H H
+    H           H
+    H           H
+    H           H
+    H           H 
+    H           H
+    </pre>
 </body>
 </html>
