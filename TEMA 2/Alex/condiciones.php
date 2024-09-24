@@ -31,12 +31,12 @@
         "No es hora de comer. 
     }
     */
-
+    /*
     $rica = true;
     $guapa = false;
 
     $relacion = ($rica &6 $guapa) ? "novia" : "amiga";
 
     echo "Ella es mi $relacion";
-
+    */
     
