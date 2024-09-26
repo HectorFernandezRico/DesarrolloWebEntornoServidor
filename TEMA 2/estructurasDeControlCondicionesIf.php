@@ -54,7 +54,34 @@
             echo "Ahora no toca comer";
     }
 
+
     /*BUCLES*/
+
+    /*BUCLE MAL HECHO*/
+    $hora = 8;
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+    if ($hora == 8) echo "Suena el despertador <br>";
+
+    /*BUCLES: DO WHILE*/
+    numero = 1;
+    do {
+        echo "$numero ";
+        $numero++;
+    } while ($numero <= 10);
+
+    /*BUCLES: FOR*/
+    $numero = 1;
+    for ($contador = 1; $contador < 10; $contador++) {
+        echo "$contador ";
+    }
 
 
 ?>
