@@ -79,9 +79,20 @@
 
     /*BUCLES: FOR*/
     $numero = 1;
-    for ($contador = 1; $contador < 10; $contador++) {
+    for ($contador = 1; $contador <= 10; $contador++) {
         echo "$contador ";
     }
 
+    /*BUCLES: FOR ASCENDENTE Y DESCENDENTE*/
+    /*BUCLE ASCENDENTE:*/
+    $numero = 1;
+    for ($contador = 1; $contador <= 10; $contador++) {
+        echo "$contador ";
+    }
+    /*BUCLE DESCENDENTE:*/
+    $numero = 1;
+    for ($contador = 10; $contador > 0; $contador--) {
+        echo "$contador ";
+    }
 
 ?>
