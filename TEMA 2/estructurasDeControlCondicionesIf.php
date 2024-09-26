@@ -32,6 +32,29 @@
     else if ($hora == 14) echo "Es la hora de comer";
     else if ($hora == 21) echo "Es la hora de cenar";
 
-    /*PAGINA 6 DEL PDF*/
+    /*CONDICIONES: OPERADOR TERNARIO*/
+    $rica = false;
+    $guapa = true;
+    $relacion = ($rica and  $guapa)?"novia": "amiga";
+    echo "Ella es mi$relacion.";
+
+    /*CONDICIONES: SWITCH*/
+    $hora = 14; //La hora en formato de 24 horas.
+    switch (hora) {
+        case 8:
+            echo "Es la hora de desayunar";
+            break;
+        case 14:
+            echo "Es la hora de comer";
+            break;
+        case 21:
+            echo "Es la hora de cenar";
+            break;
+        default:
+            echo "Ahora no toca comer";
+    }
+
+    /*BUCLES*/
+
 
 ?>
