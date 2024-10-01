@@ -95,4 +95,11 @@
         echo "$contador ";
     }
 
+    /*OTRA FORMA DE SALIR DE UN BUCLE... NO SE RECOMIENDA!!!*/
+    $numero = 1;
+    for ($contador = 1; $contador <= 600; $contador++) {
+        if ($contador == 5) break;
+            echo "$contador ";        
+    }
+
 ?>
