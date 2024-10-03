@@ -135,4 +135,20 @@
     echo "Fila1 Elemento 1: ". $tabla["fila1"][0] . "<br>";
     echo "Fila2 Elemento 3: ". $tabla["fila2"][2] . "<br>";
 
+    /*FORMAR ARRAYS DIVIDIENDO STRINGS: 
+    SPLIT(CONVIERTE UN STRING EN UN ARRAY DE STRINGS) Y 
+    EXPLODE(CONVIERTE UN STRING EN UN ARRAU DE STRINGS).*/
+    $pizza = "porcion1, porcion2, porcion3, porcion4";
+    //CON EXPLODE, DIVIDIMOS EN ELEMENTOS POR EL DELIMITADOR ","
+    $porciones = explode(",", $pizza);
+    echo "<br>" . print_r($porciones) . "<br>";
+
+    $saludos = "Hola amigos";
+    //CON STR_SPLIT, DIVIDIMOS EN ELEMENTOS DE LONGITUD 1 - POR DEFECTO.
+    $arraySaludos_1 = str_split($saludos);
+    echo "<br> Sin longitud: " . print_r($arraySaludos_1) . "<br>";
+    //CON STR_SPLIT, DIVIDIMOS EN ELEMENTOS DE LONGITUD 3.
+    $arraySaludos_3 = str_split($saludos, 3);
+    echo "<br> Sin longitud: " . print_r($arraySaludos_3) . "<br>";
+
 ?>
