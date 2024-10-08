@@ -151,4 +151,3 @@
     $arraySaludos_3 = str_split($saludos, 3);
     echo "<br> Sin longitud: " . print_r($arraySaludos_3) . "<br>";
 
-?>
