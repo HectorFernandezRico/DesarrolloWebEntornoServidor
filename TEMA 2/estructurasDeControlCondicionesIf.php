@@ -40,7 +40,7 @@
 
     /*CONDICIONES: SWITCH*/
     $hora = 14; //La hora en formato de 24 horas.
-    switch (hora) {
+    switch ($hora) {
         case 8:
             echo "Es la hora de desayunar";
             break;
@@ -71,7 +71,7 @@
     if ($hora == 8) echo "Suena el despertador <br>";
 
     /*BUCLES: DO WHILE*/
-    numero = 1;
+    $numero = 1;
     do {
         echo "$numero ";
         $numero++;
