@@ -20,6 +20,15 @@
     incremento($valor2);
     echo "Después de las funciones, valor1 es $valor1 y valor2 es $valor2";
 
-    
+    /*PARÁMETROS OPCIONALES: VALORES POR DEFECTO*/
+    function hola ($nombre, $idioma="es") {
+        if ($idioma == "es") return "Hola $nombre";
+        else if ($idioma == "fr") return "Bonjour $nombre";
+        return "Hello $nombre";
+    }
+    echo hola("Marta") . "<br>";
+    echo hola("Pascal", "fr") . "<br>";
+    echo hola("Ang", "??") . "<br>";
 
+    /**/
 ?>
