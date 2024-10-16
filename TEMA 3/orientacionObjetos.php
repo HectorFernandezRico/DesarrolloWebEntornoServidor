@@ -103,3 +103,5 @@
     Producto::muestra_numProductos();
     $producto1 -> muestra_codigo();
     $producto2 -> muestra_codigo();
+
+    /*Páginna 16*/
