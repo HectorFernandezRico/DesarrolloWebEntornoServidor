@@ -104,4 +104,82 @@
     $producto1 -> muestra_codigo();
     $producto2 -> muestra_codigo();
 
-    /*Páginna 16*/
+    /*EJEMPLOS DE ASIGNACIÓN Y CLONACIÓN:*/
+    class Pintura {
+        private $color;
+        public function __construct($miColor) {
+            $this -> color = $miColor;
+        }
+        public function set_color($miColor) {
+            $this -> color = $miColor;
+        }
+        public function indica_color() {
+            echo "color". $this -> color;
+        }
+    }
+    $tono1 = new Pintura("Azul");
+    $tono2 = $tono1;
+    $tono2 -> set_color("Amarillo");
+    echo "Caso de asignación, tenemos";
+    echo "<br>Tono2: ";$tono2 -> indica_color();
+    echo "<br>Tono1: ";$tono1 -> indica_color();
+    $tono3 = clone($tono1);
+    $tono3 -> set_color("Rojo");
+    echo "<br>Caso de clonado, tenemos";
+    echo "<br>Tono3: ";$tono3 -> indica_color();
+    echo "<br>Tono1: ";$tono1 -> indica_color();
+
+    /*HERENCIA: EJEMPLO*/
+    class Saludo {
+        protected $idioma;
+        public function __construct($idioma) {
+            $this -> idioma = $idioma;
+        }
+        public function saluda (){
+            if ($this -> idioma == "en") echo "Hello";
+            else if ($this -> idioma == "fr") echo "Bon Jour";
+            else echo "Hola";
+        }        
+    }
+    class Social extends Saludo {
+        public function despide() {
+            if ($this -> idioma == "en") echo "Good Bye";
+            else if ($this -> idioma == "fr") echo "Au Revoir";
+            else echo "Adios";
+        }
+    }
+    $amable = new Social("es");
+    echo $amable -> saluda() . "<br>"; //Hola
+    echo $amable -> despide() ."<br>"; //Adios
+    $amable2 = new Social("en");
+    echo $amable2 -> saluda() . "<br>"; //Hello
+    echo $amable2 -> despide() ."<br>"; //Good Bye
+    $amable3 = new Social("fr");
+    echo $amable3 -> saluda() . "<br>"; //Bon Jour
+    echo $amable3 -> despide() ."<br>"; //Au Revoir
+
+    /*HERENCIA: EJEMPLO DE SOBREESCRITURA DE MÉTODOS*/
+    class Producto2 {
+        public string $codigo;
+        public function __construct($codigo) {
+            $this -> codigo = $codigo;
+        }
+        public function mostrarResumen () {
+            echo "<p>Prod: " . $this -> codigo ."</p>";
+        }
+    }
+    class Tele extends Producto2 {
+        public $pulgadas;
+        public $tecnologia;
+        public function __construct($codigo, $pulgadas, $tecnologia) {
+            parent::__construct($codigo);
+            $this -> pulgadas = $pulgadas;
+            $this ->tecnologia = $tecnologia;
+        }
+        public function mostrarResumen () { 
+            parent::mostrarResumen();
+            echo "<p>TV: ". $this -> tecnologia . " de " . $this -> pulgadas . " pulgadas</p>";
+        }
+    }
+    $miTele = new Tele("232342423", 27, "Plasma");
+    $miTele -> mostrarResumen();
