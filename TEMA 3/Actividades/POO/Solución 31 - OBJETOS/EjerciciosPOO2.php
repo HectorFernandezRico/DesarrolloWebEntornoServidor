@@ -1,5 +1,5 @@
 <?php
-
+namespace EjerciciosPOO2;
     class Persona {
         protected $nombre;
         protected $apellidos;
@@ -45,9 +45,9 @@
         public function borra_telefonos() {
             $this->telefonos = [];
         }
-    }
+    };
 
-    abstract class Gerente extends Trabajador { //El abstract se lo metí yo porque daba error.
+     class Gerente extends Trabajador { //El abstract se lo metí yo porque daba error.
         private $salario=3000;
 
         public function set_salario($salario) {
@@ -65,7 +65,6 @@
                 return false;
             }
         }
-
         public function calcular_sueldo() {
             return $this->salario + ($this->salario * $this->edad / 100);
         }
@@ -86,7 +85,7 @@
         }
     }
 
-    abstract class Empleado extends Trabajador { //El abstract se lo metí yo porque daba error.
+     class Empleado extends Trabajador { //El abstract se lo metí yo porque daba error.
         private $horasTrabajadas=160;
         private $precioPorHora=10;
 
