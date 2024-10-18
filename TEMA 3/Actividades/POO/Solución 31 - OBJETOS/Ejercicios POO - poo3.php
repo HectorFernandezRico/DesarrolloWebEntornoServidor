@@ -47,7 +47,7 @@
         }
     }
 
-    class Gerente extends Trabajador {
+    abstract class Gerente extends Trabajador { //El abstract se lo metí yo porque daba error.
         private $salario=3000;
 
         public function __construct($nombre, $apellidos, $edad, $salario) {
@@ -91,7 +91,7 @@
         }
     }
 
-    class Empleado extends Trabajador {
+    abstract class Empleado extends Trabajador { //El abstract se lo metí yo porque daba error.
         private $horasTrabajadas=160;
         private $precioPorHora=10;
 
@@ -147,4 +147,3 @@
     $empleado1->aniade_telefono("69696969");
     echo $empleado1->informe_HTML();
     echo $gerente1->informe_HTML();
-?>

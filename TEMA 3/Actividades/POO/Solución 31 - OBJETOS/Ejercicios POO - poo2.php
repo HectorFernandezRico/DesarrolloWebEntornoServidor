@@ -47,7 +47,7 @@
         }
     }
 
-    class Gerente extends Trabajador {
+    abstract class Gerente extends Trabajador { //El abstract se lo metí yo porque daba error.
         private $salario=3000;
 
         public function set_salario($salario) {
@@ -86,7 +86,7 @@
         }
     }
 
-    class Empleado extends Trabajador {
+    abstract class Empleado extends Trabajador { //El abstract se lo metí yo porque daba error.
         private $horasTrabajadas=160;
         private $precioPorHora=10;
 
@@ -124,7 +124,7 @@
         }        
     }
 
-    $gerente1 = new Gerente("Pepe", "Garcia", 45);
+    $gerente1 = new Gerente("Pepe", "Garcia", 45, 1500); //El 1500 de salario se lo puse yo porque daba error
     $empleado1 = new Empleado("Alonso", "García", 23);
     echo $empleado1->informe_HTML();
     echo $gerente1->informe_HTML();

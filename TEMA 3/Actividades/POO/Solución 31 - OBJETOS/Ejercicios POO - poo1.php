@@ -14,7 +14,7 @@ class Persona {
     }
 }
 
-class Empleado extends Persona {
+abstract class Empleado extends Persona { //El abstract se lo metí yo porque daba error.
     private static $sueldo_impuestos = 1200;
     private $salario;
     private $telefonos=[];
@@ -86,4 +86,3 @@ echo $empleado1->informe_HTML();
 $empleado1->borra_telefonos();
 echo $empleado1->informe_HTML();
 
-?>
