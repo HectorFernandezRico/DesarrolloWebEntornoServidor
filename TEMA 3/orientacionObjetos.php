@@ -183,3 +183,51 @@
     }
     $miTele = new Tele("232342423", 27, "Plasma");
     $miTele -> mostrarResumen();
+
+    /*CLASES ABSTRACTAS: EJEMPLO*/
+    abstract class Producto3 {
+        private $codigo;
+        public function __construct($codigo) {
+            $this -> codigo = $codigo;
+        }
+        public function get_codigo () {
+            return $this -> codigo;
+        }
+        abstract public function mostrarResumen ();
+    }
+    class Tele2 extends Producto3 {
+        public $pulgadas;
+        public $tecnologia;
+       
+        public function mostrarResumen () { 
+            echo "Código: " . $this -> get_codigo() . "<br>";
+            echo "<p>TV: ". $this -> tecnologia . " de " . $this -> pulgadas . " pulgadas</p>";
+        }
+    }
+    $miTele = new Tele2("232342423");
+    $miTele -> pulgadas = "35";
+    $miTele -> tecnologia = "Plasma";
+    $miTele -> mostrarResumen();
+
+    /*CLASES Y MÉTODOS FINALES*/
+    class Producto4 {
+        private $codigo;
+        
+        public function get_codigo () {
+            return $this -> codigo;
+        }
+        final public function mostrarResumen () : string {
+            return "Producto " . $this -> codigo;
+        }
+    }
+    final class Microondas extends Producto4 {
+        public $potencia;
+       
+        public function get_potencia () : int { 
+           return $this -> potencia;
+        }
+
+        //NO SE PUEDE IMPLEMENTAR "mostrarResumen()"
+        
+    }
+    
