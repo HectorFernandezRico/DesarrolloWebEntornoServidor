@@ -1,0 +1,9 @@
+.celeste {
+    display: flex;
+    background-color: aliceblue;
+    border: 5px solid lightblue;
+    padding: 30px;
+}
+.separado {
+    margin-left: 10px;
+}
