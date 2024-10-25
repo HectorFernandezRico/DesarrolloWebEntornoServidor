@@ -1,0 +1,13 @@
+.celeste {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border: 5px solid lightblue;
+    padding: 30px;
+}
+.separado {
+    margin-left: 10px;
+}
+.verde {
+    color: green;
+}
