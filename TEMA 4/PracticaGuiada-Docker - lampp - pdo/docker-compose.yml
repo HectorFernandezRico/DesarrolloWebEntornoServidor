@@ -1,0 +1,30 @@
+version: '2.2'    #check if there is a new docker compose version
+
+services:
+  web:
+    build: . # Instala la imagen indicada en el dockerfile que haya en este directorio
+    ports:
+      - "81:80"    #this line maps your pc port to the container port
+    environment:
+      - PHP_PDO_MYSQL_DRIVER=1    # Activa el uso del PDO:MYSQL_DRIVER
+    depends_on:
+      - db    #this line links this container to the db container
+    volumes:
+      - /home/alumno/Escritorio/DServidor/html:/var/www/html    #this line maps the content of ./html in your pc to the /var/www/html of the container
+  db:
+    image: mysql:8.1.0    #check the mysql version you need for your project
+    environment:
+      MYSQL_ROOT_PASSWORD: root    #you can change the mysql root password here
+      MYSQL_DATABASE: lamp_db    #you can change the database name here
+    ports:
+      -  "3309:3306"
+    volumes:
+      - /home/alumno/Escritorio/DServidor/mysql_data:/var/lib/mysql    #this line maps the content of ./mysql_data in your pc to the /var/lib/mysql of the container
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"    #this line maps your pc port to the container port
+    depends_on:
+      - db    #this line links this container to the db container
+    environment:
+      PMA_HOST: db
