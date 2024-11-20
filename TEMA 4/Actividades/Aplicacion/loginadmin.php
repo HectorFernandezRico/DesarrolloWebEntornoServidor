@@ -3,6 +3,7 @@ session_start();
 require_once("pdo.php");
 $mensaje = "";
 
+
 if (isset($_POST["usuario"]) && isset($_POST["contraseña"]) && isset($_POST["submit"])) {
 
     if (empty($_POST["usuario"]) || empty($_POST["contraseña"])) {
@@ -48,7 +49,7 @@ if (isset($_POST["usuario"]) && isset($_POST["contraseña"]) && isset($_POST["su
             <input type="text" name="contraseña">
         </p>
         <p>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="submit">
         </p>
         <p><?= $mensaje ?></p>
     </form>
