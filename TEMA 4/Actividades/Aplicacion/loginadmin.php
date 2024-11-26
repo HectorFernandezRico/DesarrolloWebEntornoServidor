@@ -50,6 +50,8 @@ if (isset($_POST["usuario"]) && isset($_POST["contraseña"]) && isset($_POST["su
         </p>
         <p>
             <input type="submit" value="Enviar" name="submit">
+            <a href="menu.php"><button type="button">Volver</button></a>
+
         </p>
         <p><?= $mensaje ?></p>
     </form>
