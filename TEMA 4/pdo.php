@@ -1,7 +1,7 @@
 <?php
 
     try {
-         //Conexión a ña Base de Datos
+         //Conexión a la Base de Datos
         $pdo = new PDO ('mysql:host=db;port=3306;dbname=hfernandezdb', 'root', 'root');
       
         // Control de errores

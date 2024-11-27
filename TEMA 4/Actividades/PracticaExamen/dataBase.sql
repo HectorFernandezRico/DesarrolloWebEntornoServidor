@@ -1,0 +1,9 @@
+CREATE DATABASE tunombreExamen;
+
+USE tunombreExamen;
+
+CREATE TABLE ranking (
+    ranking_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nIntentos INTEGER NOT NULL,
+    nAdivinado INTEGER NOT NULL
+) ENGINE=INNODB CHARSET=utf8;
