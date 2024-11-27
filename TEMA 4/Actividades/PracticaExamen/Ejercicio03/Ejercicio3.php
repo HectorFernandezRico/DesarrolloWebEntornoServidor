@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("pdo.php"); 
+require_once("pdo03.php");
 
 // Inicializar sesión y número correcto
 if (!isset($_SESSION['numCorrecto'])) {
@@ -12,14 +12,21 @@ if (!isset($_SESSION['numCorrecto'])) {
 function guardaRanking($nIntentos, $numeroAdivinado, $conexion) {
     try {
         $stmt = $conexion->prepare("INSERT INTO ranking (nIntentos, nAdivinado) VALUES (:nIntentos, :nAdivinado)");
-        $stmt->execute([
-            ':nIntentos' => $nIntentos,
-            ':nAdivinado' => $numeroAdivinado
-        ]);
+        $stmt->bindParam(':nIntentos', $nIntentos, PDO::PARAM_INT);
+        $stmt->bindParam(':nAdivinado', $numeroAdivinado, PDO::PARAM_INT);
+        $stmt->execute();
         return "Ranking guardado con éxito.";
     } catch (PDOException $e) {
         return "Error: " . $e->getMessage();
     }
+}
+
+// Verifica la conexión a la base de datos
+try {
+    $conexion = new PDO('mysql:host=localhost;dbname=nombre_de_la_base_de_datos', 'usuario', 'contraseña');
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error en la conexión a la base de datos: " . $e->getMessage());
 }
 
 // Procesar entrada del usuario
@@ -65,37 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['numero'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivina un número</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            padding: 8px;
-            font-size: 1em;
-        }
-        input[type="submit"], a {
-            padding: 8px 16px;
-            font-size: 1em;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover, a:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <h1>Adivina un número entre 1 y 100</h1>
@@ -108,6 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['numero'])) {
 
     <!-- Botón para ver el ranking -->
     <br><br>
-    <a href="saulLazaro.php" class="btn-volver">Ver Ranking</a>
+    <a href="HectorFernandez.php" class="btn-volver">Ver Ranking</a>
 </body>
 </html>

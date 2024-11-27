@@ -1,6 +1,7 @@
 <?php
 // Incluir la conexión a la base de datos
-require_once("pdo.php");  // Asegúrate de que este archivo está en la misma carpeta o ajusta la ruta
+//require_once("pdo.php");
+require_once("pdoCasa.php");  // Asegúrate de que este archivo está en la misma carpeta o ajusta la ruta
 
 // Función para eliminar un registro del ranking
 function eliminarRanking($ranking_id) {
@@ -32,47 +33,6 @@ $ranking = $stmt->fetchAll();  // Obtenemos todos los registros
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        input[type="submit"] {
-            padding: 5px 10px;
-            background-color: #FF4C4C;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #cc0000;
-        }
-        .btn-volver {
-            padding: 8px 16px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-volver:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <h1>Ranking</h1>
