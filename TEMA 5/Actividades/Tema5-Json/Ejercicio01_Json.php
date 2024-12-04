@@ -1,6 +1,7 @@
 <?php
     session_start();
-    require_once("pdo.php");
+    //require_once("pdo.php");
+    require_once("pdoCasa.php");
 
     function mostrarTabla($pdo){
     $crearFichero = "./files/socios.json";
