@@ -7,7 +7,15 @@ Route::get('/', function () {
     echo "HOLA SOY EL RAIZ DE LA APLICACIÓN";
 });
 
-Route::resource('cars', '\App\Http\Controllers\CrudController');
+Route::get('/', '\App\Http\Controllers\PostController@bienvenido');
+
+Route::get('/contacto', '\App\Http\Controllers\PostController@contacto');
+
+Route::get('/post/{id}', '\App\Http\Controllers\PostController@muestraPost');
+
+Route::get('/viaje/{pais}/{provincia}/{ciudad}', '\App\Http\Controllers\PostController@muestra_ciudad');
+
+//Route::resource('cars', '\App\Http\Controllers\CrudController');
 
 /*
 Route::get('/cars', '\App\Http\Controllers\CrudController@index');

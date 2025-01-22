@@ -1,0 +1,6 @@
+.container {
+    background: linear-gradient(blue, red);
+    width: 80%;
+    margin: auto;
+    padding:20px;
+}
