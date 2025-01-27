@@ -11,11 +11,4 @@ class MenuController extends Controller
     }
 }
 
-    function visitas () {
-        $lugares = [
-            "Madrid" => "Vallecas",
-            "Barcelona" => "Llobregat",
-            "Extremadura" => "Teruel"
-        ];
-        return view("visitas", compact($lugares));
-    }
+   
