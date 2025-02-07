@@ -11,21 +11,34 @@
     <form action="{{route('grabar')}}" method="post">
         <p>
             <label for="autor">Autor: </label>
-            <input type="text" name="autor" id="autor">
+            <input type="text" name="autor" id="autor" value="{{old('autor')}}">
         </p>
 
         <p>
             <label for="titulo">Título: </label>
-            <input type="text" name="titulo" id="titulo">
+            <input type="text" name="titulo" id="titulo" value="{{old('autor')}}">
         </p>
 
         <p>
             <label for="cuerpo">Cuerpo: </label>
-            <input  name="cuerpo" id="cuerpo" cols="30" rows="10">
+            <textarea  name="cuerpo" id="cuerpo" cols="30" rows="10"> 
+                {{old('cuerpo')}}
+            </textarea>
         </p>
-        
-        <input type="submit" value="Grabar">
-        
+        <p>
+            <input type="submit" value="Grabar">
+        </p>
     </form>
+    {{-- Miro si hay un mensaje en la sección --}}
+    @if(session('mensaje'))
+        {{session('mensaje')}}
+    @endif
+    {{-- Miro si hay en la sesión errores de validación --}}
+    @error('titulo')
+        {{ $message }}
+    @enderror
+    @error('autor')
+        {{ $message }}
+    @enderror
 </body>
 </html>
