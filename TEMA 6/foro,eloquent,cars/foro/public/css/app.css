@@ -1,0 +1,36 @@
+.contenedor {
+    width: 90%;
+    margin: auto;
+    background-image: linear-gradient(orange, yellow);
+}
+
+.cabecera {
+    border: 2px solid black;
+    background-color: yellow;
+    padding: 10px;
+}
+
+.cuerpo {
+    padding: 10px;
+}
+
+.inicio {
+    margin-left: 5%;
+}
+
+.addButton img {
+    width: 50px;
+    height: 50px;
+    background-color: none;
+}
+
+form :not(input[type=submit], select, label), textarea {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;  
+}

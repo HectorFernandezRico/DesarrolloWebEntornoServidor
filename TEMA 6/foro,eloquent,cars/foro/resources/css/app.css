@@ -1,0 +1,15 @@
+.contenedor {
+    width: 90%;
+    margin: auto;
+    background-image: linear-gradient(orange, yellow);
+}
+
+.cabecera {
+    border: 2px solid black;
+    background-color: yellow;
+    padding: 10px;
+}
+
+.cuerpo {
+    padding: 10px;
+}
