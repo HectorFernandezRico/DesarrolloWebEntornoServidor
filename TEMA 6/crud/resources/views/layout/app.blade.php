@@ -11,6 +11,11 @@
             margin: auto;
             background: linear-gradient(lightblue, white);
         }
+        .cuadro {
+            border: 1px solid grey;
+            padding: 18px;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -18,7 +19,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        // OBTENGO TODOS LOS ESTUDIANTES
+        $students = Student::all();
+        return view('estudiantes', compact('students'));
     }
 
     /**
@@ -53,6 +56,7 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         //
+        return view('fmodificacion');
     }
 
     /**
