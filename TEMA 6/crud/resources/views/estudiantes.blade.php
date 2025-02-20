@@ -2,7 +2,13 @@
 @section('titulo', 'CONSULTA DE ESTUDIANTES')
 
 @section('contenido')
+    <p style="color: blue">
+        @if (session('mensaje'))
+            {{ session('mensaje') }}
+        @endif
+    </p>
     @foreach ($students as $student)
+    <div class="cuadro">
         <p>Nombre: {{ $student -> nombre}}</p>
         <p>Nota: {{ $student -> nota}}</p>
         <p>
@@ -13,5 +19,6 @@
                 <input type="submit" value="BORRAR">
             </form>
         </p>
+    </div>
     @endforeach
 @endsection

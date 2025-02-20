@@ -55,8 +55,9 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
-        return view('fmodificacion');
+        // Recupero el estudiante
+        $student = Student::findOrFail($id);
+        return view('fmodificacion', compact('student'));
     }
 
     /**
@@ -64,7 +65,21 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Valido los datos 
+        $validated = $request->validate([
+            'nombre' => 'required|max:255',
+            'nota' => 'required|between:0,2'
+            
+        ]);
+
+        // Guardo el registro
+        $student = Student::findOrFail($id);
+        $student->nombre = $request->nombre;
+        $student->nota = $request->nota;
+        $student->save();
+
+        //Redirecciono a la vista de estudiantes
+        return back() -> with('mensaje', 'Estudiante ' . $student -> id . ' modificado con exito');
     }
 
     /**
@@ -72,6 +87,11 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // Realizo la acción del post (laravel entiende que es un put)
+        $student = Student::findOrFail($id);
+        $student->delete();
+
+        // Redirecciono a la vista de estudiantes
+        return back() -> with('mensaje', 'Estudiante ' . $id . ' eliminado con exito');
     }
 }

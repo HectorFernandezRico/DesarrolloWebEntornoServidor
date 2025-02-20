@@ -1,0 +1,19 @@
+.cuadro{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    background: rgb(245,245,245);
+    background: radial-gradient(circle, rgba(245,245,245,1) 0%, rgba(180,179,232,1) 100%); 
+}
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    margin: 5px;
+    width: 30%;
+}
+button{
+    font-size: x-large;
+    width: 100%;
+}
