@@ -1,0 +1,1 @@
+INSERT INTO `clients`(`razonsocial`, `pcontacto`, `telefono`, `email`, `direccion`, `created_at`, `updated_at`) VALUES ('a','a','123456789','a@gmail.com','a',now(),now()),('b','b','123456789','b@gmail.com','b',now(),now()),('c','c','123456789','c@gmail.com','c',now(),now())

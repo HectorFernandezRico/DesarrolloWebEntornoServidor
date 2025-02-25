@@ -1,0 +1,3 @@
+INSERT INTO `genres`( `nombre`, `descripcion`, `created_at`, `updated_at`) VALUES ('terror','De mucho miedo',now(),now()),('rpg','multiplataforma',now(),now()),
+('shooter','juego de disparos',now(),now());
+INSERT INTO `games`(`genre_id`, `titulo`, `descripcion`, `precio`, `multijugador`, `pegi`, `created_at`, `updated_at`) VALUES ('1','phasmofobia','fantasmas de paises',35.25,1,'18',now(),now()),('2','mario bros','rescata  a tu princesa racista',40.25,1,'7',now(),now()),('3','call of duty','modo historia de la guerra en primera persona',90.25,0,'16',now(),now())
