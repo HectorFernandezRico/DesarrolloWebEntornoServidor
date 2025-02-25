@@ -1,0 +1,13 @@
+body {
+    background-color: grey;
+    text-align: center;
+}
+div {
+    border : 1px solid black;
+}
+.azul {
+    color: blue;
+}
+.rojo {
+    color: red;
+}
