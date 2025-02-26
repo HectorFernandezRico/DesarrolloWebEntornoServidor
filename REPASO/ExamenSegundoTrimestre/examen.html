@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Segunda Evaluación</title>
+</head>
+
+<body>
+    <h2>Primera parte: laravel (5 puntos)</h2>
+    <h3>Descripcion</h3>
+    <p>Una empresa de marketing tiene una base de datos con informacion sobre sus clientes.</p>
+    <p>Vas a realizar un formulario que permita al usuario añadir información sobre los clientes.</p>
+    <h3>Modelo de datos</h3>
+    <table>
+        <tr>
+            <th>clients</th>
+        </tr>
+        <tr>
+            <td>Id PK autoincrementable</td>
+
+        </tr>
+        <tr>
+            <td>razonsocial varchar(255)</td>
+        </tr>
+        <tr>
+            <td>pcontacto varchar(255)</td>
+        </tr>
+        <tr>
+            <td>telefono varchar(255)</td>
+        </tr>
+        <tr>
+            <td>email varchar(255)</td>
+        </tr>
+        <tr>
+            <td>direccion varchar(255)</td>
+        </tr>
+        <tr>
+            <td>created_at timestamp</td>
+        </tr>
+        <tr>
+            <td>updated_at timestamp</td>
+        </tr>
+    </table>
+    <ul>
+        <li>Utilizarás la tabla clients para guardar los datos de los clientes.</li>
+        <li>Todos los campos son obligatorios, salvo los timestamps.</li>
+        <li>El campo email es único, no debe repetirse en la tabla.</li>
+        <li>Todos los accesos a la BD se realizarán medianteORM. No se admite el uso de la clase DB.</li>
+    </ul>
+    <h3>Enunciado</h3>
+    <p>
+        <b>Aplicación</b> <br>
+        Crea una nueva aplicación laravel y llámala "APP1tunombre" por ejemplo "APP1marta".
+    </p>
+    <p>
+        <b>BD(0,25):</b>
+    <ul>
+        <li>Crea en mysql una nueva base de datos llamada "eval2turno1Tunombre"</li>
+        <li>Configura la aplicación laravel APP1tunombre para que trabaje con ella.</li>
+    </ul>
+    </p>
+    <p>
+        <b>Migraciones y modelo(0,25):</b>
+    <ul>
+        <li>Crea el modelo de la tabla clients y la migración correspondiente.</li>
+        <li>Crea l atabla en la base de datos mediante la migración.</li>
+        <li>Inserta al menos 3 registros de clientes en la tabla clients, mediante SQL. Guarda ek SQL utilizado en el
+            fichero insercion.sql en /database/sql/insercion.sql</li>
+    </ul>
+    </p>
+    <p>
+        <b>Rutas(0,5):</b>
+        <br>
+        Tu aplicación tendrá <b>solo</b> las siguientes rutas:
+    <ul>
+        <li>GET - /clentes/alta -> Para mostrar un formulario con datos de un cliente.
+            Corresponde a la vista "formularioAlta". El alias de esta ruta será "formulario.alta"
+        </li>
+        <li>POST - /clientes/alta -> Para grabar un nuevo cliente en BD. El alias de esta ruta será "clientes.alta"</li>
+        <li>GET - /principal -> Para mostrar la página principal de l apalicación con todos los registros de la tabla
+            clients. Corresponde a la vista "principal". El alias de esta ruta es "clientes.home".</li>
+    </ul>
+    </p>
+    <p>
+        <b>Controlador(0,5):</b>
+    <p>Crea un controlador llamado ClientController con los métodos necesarios para gestionar las rutas anteriores</p>
+    </p>
+    <p>
+        <b>Vistas: </b>
+        <br>
+        Tu aplicación tendrá 2 vistas y una plantilla:
+    <ul>
+        <li>"plantilla" Será la plantilla de tu aplicación</li>
+        <li>Vista "principal": Mostrará todos los clientes ordenados por razón social</li>
+        <li>Vista "formularioAlta": Mostrará el formulario de alta de un cliente</li>
+    </ul>
+    <p>
+        <b>Funcionalidad de la Vista "plantilla" (0,5): </b> <br>
+        La plantilla será utilizada por todas las vistas de tu aplicación. Llavará linkado un fichero plantilla.css,
+        donde ponfras todo el css necesario en la aplicación.
+        <br>
+        la plantilla consta de un menú en la parte superior con dos botones y tu nombre y apellidos.
+        Este menú aparecerá en todas las páginas.
+        <br>
+        Los botones son:
+        - "Home": Un enlace a la página principal
+        - "Alta": un enlace al formulario de alta
+        <br>
+        <b>Nota: </b> Haz un diseño css sencillo para no consumir mucho tirmpo de examen en el front.
+    </p>
+    </p>
+    <br>
+    <p>
+        <b>Figura 1: Menú en la parte superior de todas las páginas</b>
+        <br>
+        <br>
+        <b>Funcionalidad de la vista "principal" (1 PUNTO)</b>
+        <br>
+        La ruta "/principal" mostrará todos los clientes existentes en la tabla de clientes, por orden alfabético de
+        razón social, según se muestra en la figura 1.
+        <br>
+        <br>
+        <b>Funcionalidad de la vista "formularioAlta" (2 PUNTO)</b>
+        <br>
+        El formulario tendrá el aspecto que se muestra en la figura 2.
+        <br>
+    <ul>
+        Funcionalidad del formulario:
+        <li>Inicialmente los campos estarán en blanco</li>
+        <li>Si el usuario hace click en el botón "Añadir":
+            <ul>
+                La aplicación valida los datos del formulario, de forma qu eno falle la inserción en la tabla.
+                <li>Si algún dato es incorrecto, mostrarás en rojo los mensajes de error correspondientes, y mantendrás
+                    la persistencia de la información.</li>
+                Si los datos estaban bien:
+                <li>
+                    <ul>
+                        <li>Añadiras el registro en la tabla clients</li>
+                        <li>Retornarás al formulario, mostrando un mensaje en color azul, debajo del formulario, con el
+                            mensaje: "Se ha insertado el cliente número ID", siendo ID el id del registro recién
+                            insertado.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Si el usuario hace click en el botón "Volver"
+            <ul>
+                <li>La aplicación navegará a la ruta /principal</li>
+            </ul>
+        </li>
+    </ul>
+    </p>
+    <br>
+    <br>
+    <h2>Segunda Parte: API REST en PHP nativo (5 PUNTOS)</h2>
+    <h3>Descripción</h3>
+    <p>
+        La empresa MyGas ha incluido un software en sus calderas, para detectar de forma automática escapes de gas o
+        averías de alto riesgo. Quieren que este softawe informe automaticamente de la situacion de emergencia a su
+        personal de atencion de averias.
+        <br>
+        La modificacion del software de la caldera la realizará el departamento de IOT. Ese software enviará un request
+        con la información de la incidencia.
+        <br>
+        Tú deberás realizar una API REST que reciba ese request y dé de alta la incidencia en un sistema de gestion de
+        incidencias.
+    </p>
+    <br>
+    <h3>Descripción de la API:</h3>
+    <p>
+        <b>Request:</b>
+        La request que se recibe es:
+    <ul>
+        <li>Solicitud de akta de una nueva incidencia <b>(POST)</b> a la ruta /api/incidencia</li>
+        <li>Envio de la información en el body del request, en formato JSON</li>
+    </ul>
+    </p>
+    <br>
+    <p>
+    <ul>
+        Body del request: constará de un objeto JSON con los siguientes atributos:
+        <li>Titulo: "Avería grabe en la caldera"</li>
+        <li>Descripción: Descripción de la averia concreta, con los códigos de referencia</li>
+        <li>Fecha: Fecha de la averías</li>
+        <li>Hora: Hora de la averia</li>
+        <li>Categoria: "Emergencia autodetectada"</li>
+        <li>Situación: "Enviada a servicio especializado"</li>
+    </ul>
+    </p>
+    <br>
+    <p>
+        <b>Response:</b>
+        <br>
+        Tu API emitirá un response con un content-type de tipo application/json
+        <br>
+        El codigo de estado del response será:
+    <ul>
+        <li>201 (Created) si todo fue bien</li>
+        <li>406 (Not acceptable) si los datos no validan</li>
+        <li>404 (Not found) si la ruta es incorrecta</li>
+    </ul>
+    <br>
+    body del response:
+    - Si todo fue bien: "Se ha insertado la incidencia numero: ID", sinedo ID el id del registro insertado.
+    - Si los datos recibidos son incorrectos: "Datos incorrectos"
+    </p>
+    <br>
+    <h3>Modelo de datos:</h3>
+    <table>
+        <tr>
+            <th>Averias</th>
+        </tr>
+        <tr>
+            <td>id PK autoincrementada</td>
+
+        </tr>
+        <tr>
+            <td>categoria varchar(255)</td>
+        </tr>
+        <tr>
+            <td>situacion varchar(255)</td>
+        </tr>
+        <tr>
+            <td>titulo varchar(255)</td>
+        </tr>
+        <tr>
+            <td>descripcion text</td>
+        </tr>
+        <tr>
+            <td>fecha varchar(255)</td>
+        </tr>
+        <tr>
+            <td>hora varchar(255)</td>
+        </tr>
+    </table>
+    <br>
+    <p>
+        Crea esta tabla en la misma Base de Datos del ejercicio anterior (eval2turno1tunombre):
+    <pre>
+            CREATE TABLE averias (
+                id integer not null AUTO_INCREMENT PRIMARY key,
+                categoria VARCHAR(255) NOT NULL,
+                situacion VARCHAR(255) NOT NULL,
+                titulo VARCHAR(255) NOT NULL,
+                descripcion text NOT NULL,
+                fecha VARCHAR(255) NOT NULL,
+                hora VARCHAR(255) NOT NULL,
+            ) ENGINE=INNODB, charset=utf8;
+        </pre>
+    </p>
+
+    <p>
+        <b>Primera parte (1,5PUNTOS)</b>
+    <ul>
+        Este programa:
+        <li>Se conecta a la base de datos mediante POO</li>
+        <li>Recupera la información de la request recibida(uri, método y datos del body).</li>
+        <li>Comprueba que el método es POST, y que la ruta es "/api/incidencia/". Si la ruta o el método no son los
+            indicados, retorna un response con el codigo 404 (not found), sin nada en el body.</li>
+        <li>Valida los datos recibidos en el body de request:
+            <ul>
+                <li>Todos los datos deberán existir en el body</li>
+                <li>Ningún dato estará en vacio</li>
+                <li>La longitud de todos los datos (excepto la descripción) deberá ser <= 255</li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    En el caso de que los datos no validen, retornarás un response con el código 406 (Unprocessanle content), y en el
+    body un JSON con un "mensaje de "error en los datos recibidos".
+    </p>
+    <p>
+        <b>Segunda Parte (1,5 PUNTOS)</b>
+        <br>
+    <ul>
+        En el caso de que los datos sean correctos:
+        <li>Inserta un registro en la tabla de averías con los datos recibidos. Será imprescindible prevenir la
+            inyección de SQL malicioso.</li>
+        <li>Recupera el id del registro insertado</li>
+        <li>Retorna un response con el código http 201 (cretated) y un json en el body con un "mensaje" de "Se ha
+            insertado la incidencia número: ID", siendo ID el id del registro insertado.</li>
+    </ul>
+    </p>
+</body>
+
+</html>
